@@ -1,0 +1,20 @@
+name:                advent-of-code
+version:             0.1.0.0
+license:             BSD3
+author:              "Kai Schnackenberg"
+copyright:           "2019 Kai Schnackenberg"
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+executables:
+  advent-of-code-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
