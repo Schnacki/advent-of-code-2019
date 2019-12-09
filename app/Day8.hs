@@ -1,6 +1,6 @@
 module Day8 (part1, part2) where
 
-import Data.List(minimumBy,transpose)
+import Data.List(minimumBy, transpose)
 
 type Layer = [Char]
 
@@ -26,11 +26,9 @@ part1 file = do
 
 -- Part 2
 
-decode :: [Layer] -> Layer
-decode layers = map extractColor (transpose layers)
-    where extractColor = foldl (\x y-> if (x=='2') then y else x ) '2'
+decode :: [Layer] -> String
+decode = map extractColor . transpose
+    where extractColor = foldl1 $ \x y-> if (x == '2') then y else x
 
-part2 :: FilePath -> IO Layer
-part2 file = do  
-    input <- readFile file
-    return $ decode $ partitionToSize 150 input
+part2 :: FilePath -> IO String
+part2 file = readFile file >>= return . decode . partitionToSize 150
