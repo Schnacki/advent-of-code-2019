@@ -6,6 +6,7 @@ import qualified Day3
 import qualified Day4
 import qualified Day6
 import qualified Day8
+import qualified Day10
 
 main :: IO ()
 main = do
@@ -51,4 +52,10 @@ main = do
     Day8.part1 "input/day8.txt" >>= print
     putStr "Part 2: "
     Day8.part2 "input/day8.txt" >>= print
+    putStrLn $ replicate 30 '#'
+
+    -- Day 10
+    putStrLn "Results for Day 10:"
+    putStr "Part 1: "
+    Day10.part1 "input/day10.txt" >>= print
     putStrLn $ replicate 30 '#'
