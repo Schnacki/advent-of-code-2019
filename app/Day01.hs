@@ -1,4 +1,4 @@
-module Day1 (part1, part2) where
+module Day01 (part1, part2) where
 
 -- Part 1
 part1 :: FilePath -> IO Int

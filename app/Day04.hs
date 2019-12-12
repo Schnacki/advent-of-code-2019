@@ -1,4 +1,4 @@
-module Day4 (part1, part2) where
+module Day04 (part1, part2) where
 
 import Data.List (group)
 

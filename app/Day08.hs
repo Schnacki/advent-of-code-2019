@@ -1,4 +1,4 @@
-module Day8 (part1, part2) where
+module Day08 (part1, part2) where
 
 import Data.List(minimumBy, transpose)
 

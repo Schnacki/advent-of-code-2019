@@ -1,4 +1,4 @@
-module Day3 (part1, part2) where
+module Day03 (part1, part2) where
 
 import qualified Data.List as L
 import qualified Data.Set as S

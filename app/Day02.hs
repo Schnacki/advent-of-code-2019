@@ -1,4 +1,4 @@
-module Day2 (part1, part2) where
+module Day02 (part1, part2) where
 
 import Data.List(find)
 
