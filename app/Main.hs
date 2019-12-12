@@ -30,6 +30,8 @@ main = do
     putStrLn "Results for Day 3:"
     putStr "Part 1: "
     Day3.part1 "input/day3.txt" >>= print
+    putStr "Part 2: "
+    Day3.part2 "input/day3.txt" >>= print
     putStrLn $ replicate 30 '#'
 
     -- Day 4
