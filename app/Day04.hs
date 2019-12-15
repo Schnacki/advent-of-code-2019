@@ -1,6 +1,7 @@
 module Day04 (part1, part2) where
 
 import Data.List (group)
+import Control.Monad (liftM2)
 
 passwordRange :: [String]
 passwordRange = show <$> [248345..746315]
@@ -15,10 +16,10 @@ digitsIncrease :: String -> Bool
 digitsIncrease (x: x': xs) = x <= x' && digitsIncrease (x':xs)
 digitsIncrease _ = True
 
--- Part 1:
+-- Part 1
 part1 :: IO Int
-part1 = return . length . filter (\pwd -> digitsIncrease pwd && digitsRepeat pwd) $ passwordRange
+part1 = return . length . filter (liftM2 (&&) digitsIncrease digitsRepeat) $ passwordRange
 
--- Part 2:
+-- Part 2
 part2 :: IO Int
-part2 = return . length . filter (\pwd -> digitsIncrease pwd && oneDigitRepeatsTwice pwd) $ passwordRange
+part2 = return . length . filter (liftM2 (&&) digitsIncrease oneDigitRepeatsTwice) $ passwordRange

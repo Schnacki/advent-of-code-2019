@@ -13,19 +13,21 @@ parseString val = let (fst, snd) = span (/=')') val in (fst, tail snd)
 buildOrbitTree :: [(String,String)] -> String -> Object
 buildOrbitTree list val = Orbit val $ buildOrbitTree list <$> findAll val list
 
-countOrbits :: Int -> Object -> Int
-countOrbits level (Orbit _ objects) = level + (sum . map (countOrbits $ level+1)) objects
-
 generateObjectTreeFromFile :: String -> FilePath -> IO Object
 generateObjectTreeFromFile root file = do
     lines <- lines <$> readFile file
     return $ buildOrbitTree (parseString <$> lines) root
+
+-- Part 1
+countOrbits :: Int -> Object -> Int
+countOrbits level (Orbit _ objects) = level + (sum . map (countOrbits $ level+1)) objects
 
 part1 :: FilePath -> IO Int
 part1 file = do
     tree <- generateObjectTreeFromFile "COM" file
     return $ countOrbits 0 tree
 
+-- Part 2
 findPathToObject :: String -> Object -> [String]
 findPathToObject name object@(Orbit n objects)
     | name == n = [n]

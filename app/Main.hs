@@ -8,58 +8,48 @@ import qualified Day06
 import qualified Day08
 import qualified Day10
 
+printResultsForDay:: (Show a, Show b) => Int -> a -> b -> IO ()
+printResultsForDay day part1 part2 = do
+    putStrLn $ "Results for Day " ++ (show day) ++ ":"
+    putStr "Part 1: "
+    print part1
+    putStr "Part 2: "
+    print part2
+    putStrLn $ replicate 30 '#'
+
 main :: IO ()
 main = do
     -- Day 1
-    putStrLn "Results for Day 1:"
-    putStr "Part 1: "
-    Day01.part1 "input/Day01.txt" >>= print
-    putStr "Part 2: "
-    Day01.part2 "input/Day01.txt" >>= print
-    putStrLn $ replicate 30 '#'
-
+    res01_1 <- Day01.part1 "input/Day01.txt"
+    res01_2 <- Day01.part2 "input/Day01.txt"
+    printResultsForDay 1 res01_1 res01_2
+   
     -- Day 2
-    putStrLn "Results for Day 2:"
-    putStr "Part 1: "
-    Day02.part1 "input/Day02.txt" >>= print
-    putStr "Part 2: "
-    Day02.part2 "input/Day02.txt" >>= print
-    putStrLn $ replicate 30 '#'
-
+    res02_1 <- Day02.part1 "input/Day02.txt"
+    res02_2 <- Day02.part2 "input/Day02.txt"
+    printResultsForDay 2 res02_1 res02_2
+   
     -- Day 3
-    putStrLn "Results for Day 3:"
-    putStr "Part 1: "
-    Day03.part1 "input/Day03.txt" >>= print
-    putStr "Part 2: "
-    Day03.part2 "input/Day03.txt" >>= print
-    putStrLn $ replicate 30 '#'
+    res03_1 <- Day03.part1 "input/Day03.txt"
+    res03_2 <- Day03.part2 "input/Day03.txt"
+    printResultsForDay 3 res03_1 res03_2
 
     -- Day 4
-    putStrLn "Results for Day 4:"
-    putStr "Part 1: "
-    Day04.part1 >>= print
-    putStr "Part 2: "
-    Day04.part2 >>= print
-    putStrLn $ replicate 30 '#'
+    res04_1 <- Day04.part1
+    res04_2 <- Day04.part2
+    printResultsForDay 4 res04_1 res04_2
 
     -- Day 6
-    putStrLn "Results for Day 6:"
-    putStr "Part 1: "
-    Day06.part1 "input/Day06.txt"  >>= print
-    putStr "Part 2: "
-    Day06.part2 "input/Day06.txt"  >>= print
-    putStrLn $ replicate 30 '#'
+    res06_1 <- Day06.part1 "input/Day06.txt"
+    res06_2 <- Day06.part2 "input/Day06.txt"
+    printResultsForDay 6 res06_1 res06_2
 
     -- Day 8
-    putStrLn "Results for Day 8:"
-    putStr "Part 1: "
-    Day08.part1 "input/Day08.txt" >>= print
-    putStr "Part 2: "
-    Day08.part2 "input/Day08.txt" >>= print
-    putStrLn $ replicate 30 '#'
+    res08_1 <- Day08.part1 "input/Day08.txt"
+    res08_2 <- Day08.part2 "input/Day08.txt"
+    printResultsForDay 8 res08_1 res08_2
 
     -- Day 10
-    putStrLn "Results for Day 10:"
-    putStr "Part 1: "
-    Day10.part1 "input/Day10.txt" >>= print
-    putStrLn $ replicate 30 '#'
+    res10_1 <- Day10.part1 "input/Day10.txt"
+    res10_2 <- Day10.part2 "input/Day10.txt"
+    printResultsForDay 10 res10_1 res10_2

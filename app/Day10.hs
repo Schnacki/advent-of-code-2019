@@ -1,4 +1,4 @@
-module Day10 (part1) where
+module Day10 (part1, part2) where
 
 import Data.List (findIndices, (\\))
 import Data.Tuple (swap)
@@ -26,3 +26,6 @@ part1 f = do
     file <- readFile f
     let field = readField (24, 24) file
     return $ findMostDetectableAsteroids (24, 24) field
+
+part2 :: FilePath -> IO String
+part2 f = return "TODO"

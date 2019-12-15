@@ -32,7 +32,7 @@ part1 file = do
     (route1, route2) <- readRouteFile file
     return $ findClosestIntersection route1 route2
 
--- part 2:
+-- Part 2:
 
 type Position' = (Int, Int, Int)
 
@@ -59,12 +59,13 @@ part2 file = do
     (route1, route2) <- readRouteFile file
     return $ findIntersectionWithMinimalSteps route1 route2
 
--- utility:
-readRouteFile :: FilePath -> IO ([Direction],[Direction])
+-- Utility:
+
+readRouteFile :: FilePath -> IO ([Direction], [Direction])
 readRouteFile file = do
     routeLines <- lines <$> readFile file 
     let routes = parseRoute <$> routeLines
-    return (routes !! 0,routes !! 1)
+    return (routes !! 0, routes !! 1)
         where 
             parseRoute str = case L.findIndex (==',') str of
                 Just index -> (readDirection $ take index str):parseRoute (drop (index + 1) str)
