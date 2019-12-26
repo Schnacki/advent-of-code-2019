@@ -1,4 +1,4 @@
-module Day16 (part1, part2,patternForElement) where
+module Day16 (part1, part2) where
 
     import Data.Char(digitToInt, intToDigit)
 
