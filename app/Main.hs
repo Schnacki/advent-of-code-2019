@@ -7,6 +7,7 @@ import qualified Day04
 import qualified Day06
 import qualified Day08
 import qualified Day10
+import qualified Day16
 
 printResultsForDay:: (Show a, Show b) => Int -> a -> b -> IO ()
 printResultsForDay day part1 part2 = do
@@ -53,3 +54,8 @@ main = do
     res10_1 <- Day10.part1 "input/Day10.txt"
     res10_2 <- Day10.part2 "input/Day10.txt"
     printResultsForDay 10 res10_1 res10_2
+
+    -- Day 16
+    res16_1 <- Day16.part1 "input/Day16.txt"
+    res16_2 <- Day16.part2 "input/Day16.txt"
+    printResultsForDay 16 res16_1 res16_2
