@@ -7,6 +7,7 @@ import qualified Day04
 import qualified Day06
 import qualified Day08
 import qualified Day10
+import qualified Day12
 import qualified Day16
 import qualified Day22
 import qualified Day24
@@ -56,6 +57,11 @@ main = do
     res10_1 <- Day10.part1 "input/Day10.txt"
     res10_2 <- Day10.part2 "input/Day10.txt"
     printResultsForDay 10 res10_1 res10_2
+
+    -- Day 12
+    res12_1 <- Day12.part1
+    res12_2 <- Day12.part2
+    printResultsForDay 12 res12_1 res12_2
 
     -- Day 16
     res16_1 <- Day16.part1 "input/Day16.txt"
